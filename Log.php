@@ -18,7 +18,15 @@ class Log {
         file_put_contents($this->log_file, $current);
     }
 
+    // check if file exists, if not create it including directory
     private function check_file() {
+        // check log dir
+        if (!file_exists('./logs')) {
+            if (!mkdir('./logs')) {
+                die("<p>Error: Could not create new log file dirextory, please check file permissions.</p>");
+            }
+        }
+        // check log file
         if (!file_exists($this->log_file)) {
             if (!touch($this->log_file)) {
                 die("<p>Error: Could not create new log file ({$this->log_file}), please check file permissions.</p>");
