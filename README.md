@@ -11,7 +11,7 @@ Create a new instance of the class:
 $log = new Log();
 
 // specify your own log file, and make sure it is writable by the http server
-$log = new Log('myproject.txt');
+$log = new Log('application_log.txt');
 ```
 Log a message
 ```php
