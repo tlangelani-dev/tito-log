@@ -8,8 +8,9 @@ class Log {
     public function __construct($user_log_file = null) {
         if ($user_log_file !== null) {
             $this->log_file = __DIR__.'/logs/'.$user_log_file;
+        } else {
+            $this->log_file = __DIR__.'/logs/'.$this->log_file;
         }
-        $this->log_file = __DIR__.'/logs/'.$this->log_file;
         $this->check_file();
     }
 
